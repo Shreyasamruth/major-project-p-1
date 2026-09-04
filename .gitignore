@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+shared_db.json
+phi_vault.json
+deid_system.db
+tmp_*
+enhanced_*
+tmp_scan_*
+dataset/
+

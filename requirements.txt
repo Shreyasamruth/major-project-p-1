@@ -1,0 +1,14 @@
+streamlit
+spacy
+pymupdf
+opencv-python-headless
+cryptography
+langchain
+langchain-google-genai
+langchain-openai
+pandas
+python-dotenv
+pillow
+google-generativeai
+faker
+
