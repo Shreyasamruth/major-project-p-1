@@ -37,6 +37,14 @@ from utils.db_handler import DBHandler
 from agents.deid_agent import DeidAgent
 
 load_dotenv(override=True)
+if hasattr(st, "secrets"):
+    try:
+        for k, v in st.secrets.items():
+            if isinstance(v, str) and k not in os.environ:
+                os.environ[k] = v
+    except Exception:
+        pass
+
 api_key = os.getenv("GOOGLE_API_KEY", "")
 
 st.set_page_config(page_title="Healthcare De-ID Engine", page_icon="🏥", layout="wide")

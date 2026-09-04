@@ -3,12 +3,12 @@ from typing import List, Dict, Any, Tuple
 import re
 
 class DeidEngine:
-    def __init__(self, model_name: str = "en_core_web_trf"):
+    def __init__(self, model_name: str = "en_core_web_sm"):
         try:
-            self.nlp = spacy.load(model_name)
+            self.nlp = spacy.load("en_core_web_sm")
         except OSError:
             try:
-                self.nlp = spacy.load("en_core_web_sm")
+                self.nlp = spacy.load(model_name)
             except Exception:
                 self.nlp = None
 
