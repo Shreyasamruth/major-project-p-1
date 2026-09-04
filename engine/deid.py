@@ -8,11 +8,9 @@ class DeidEngine:
             self.nlp = spacy.load("en_core_web_sm")
         except Exception:
             try:
-                import spacy.cli
-                spacy.cli.download("en_core_web_sm")
-                self.nlp = spacy.load("en_core_web_sm")
+                self.nlp = spacy.load(model_name)
             except Exception as e:
-                print(f"Warning: Could not load or download SpaCy model en_core_web_sm ({e}). Falling back to regex-only detection.")
+                print(f"Warning: Could not load SpaCy model ({e}). Falling back to regex-only detection.")
                 self.nlp = None
 
         self.phi_labels = ["PERSON", "DATE", "GPE", "ORG", "PHONE", "EMAIL", "SSN", "MRN", "INSURANCE_ID"]
